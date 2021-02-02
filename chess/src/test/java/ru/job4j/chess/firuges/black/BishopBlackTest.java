@@ -30,6 +30,8 @@ public class BishopBlackTest {
     public void testWay() {
         BishopBlack bishopBlack = new BishopBlack(Cell.C1);
         bishopBlack.way(Cell.G5);
+
+
     }
 
     public void testIsDiagonal() {
