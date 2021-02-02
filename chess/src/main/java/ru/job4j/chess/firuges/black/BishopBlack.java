@@ -20,7 +20,7 @@ public class BishopBlack implements Figure {
     // 3. Задача реализовать метод way таким образом,
     // чтобы он вернул массив из четырех клеток: D2, E3, F4, G5.
     // Чтобы заполнить массив ячеек, нужно использовать метод Cell.findBy
-    public Cell[] way(Cell dest) {
+    public Cell[] way(Cell dest) throws ImpossibleMoveException {  // объявить Exception
         if (!isDiagonal(position, dest)) {
             throw new ImpossibleMoveException(
                     String.format("Could not move by diagonal from %s to %s", position, dest)
@@ -37,26 +37,26 @@ public class BishopBlack implements Figure {
         int x = position.getX(); // вычислить ячейку через index + deltaX
         int y = position.getY(); // вычистить ячейку через index + deltaY
         for (int index = 0; index < size; index++) {
-            steps[index] = Cell.findBy(x, y);
             x += deltaX;
             y += deltaY;
             // задача реализовать метод way G5 таким образом, чтобы он вернул массив
             // из четырех клеток: D2, E3, F4, G5.
             // Чтобы заполнить массив ячеек, нужно использовать метод Cell.findBy
-            steps[index] = Cell.findBy(D2, E3, F4, G5.);
-
+            steps[index] = Cell.findBy(x, y);
         }
         return steps;
-
-
-
-
-
-
     }
 
-    public boolean isDiagonal(Cell source, Cell dest) {
-        return false;
+
+    //если мы передали начальную и конечную ячейки, через которые нельзя провести диагональ,
+    // нужно выкинуть исключение.
+    public boolean isDiagonal(Cell source, Cell dest) throws ImpossibleMoveException {
+        if (!isDiagonal(position, dest)) {
+            throw new ImpossibleMoveException(
+                    String.format("Could not move by diagonal from %s to %s", position, dest)
+            );
+        }
+        return true;
     }
 
     @Override
