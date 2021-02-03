@@ -35,6 +35,7 @@ public class BishopBlackTest {
     }
 
     public void testIsDiagonal() {
+
     }
 
 

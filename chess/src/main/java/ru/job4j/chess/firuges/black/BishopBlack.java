@@ -51,7 +51,9 @@ public class BishopBlack implements Figure {
     //если мы передали начальную и конечную ячейки, через которые нельзя провести диагональ,
     // нужно выкинуть исключение.
     public boolean isDiagonal(Cell source, Cell dest) throws ImpossibleMoveException {
-        if (!isDiagonal(position, dest)) {
+        // надо посчитать такую разницу, как для координат X и Y - если такие разницы
+        // равны - значит фигура ходит по диагонали
+        if (Math.abs(source.getX() - dest.getX()) != Math.abs(source.getY() - dest.getY())) {
             throw new ImpossibleMoveException(
                     String.format("Could not move by diagonal from %s to %s", position, dest)
             );
