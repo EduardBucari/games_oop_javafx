@@ -20,7 +20,17 @@ public final class Logic {
         figures[index] = figures[index].copy(dest);
     }
 
+
+
+    // 5. В классе Logiс метод free. Метод free должен пройтись по массиву figures и проверить,
+    // что фигуры не занимают элементы из массива steps.
+    //Если они занимают ячейки steps, то метод должен кинуть исключение.
     private boolean free(Cell[] steps) throws OccupiedCellException {
+        for (int index = 0; index < figures.length; index++) {
+            Figure figure = figures[index];
+           if ()
+
+        }
         return true;
     }
 
