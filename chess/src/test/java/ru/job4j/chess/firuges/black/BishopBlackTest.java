@@ -29,7 +29,7 @@ public class BishopBlackTest {
     // его таким образом, чтобы он вернул массив из четырех клеток: D2, E3, F4, G5.
     public void testWay() {
         BishopBlack bishopBlack = new BishopBlack(Cell.C1);
-        bishopBlack.way(Cell.G5);
+        bishopBlack.way(Cell.G5);  // ?
 
 
     }

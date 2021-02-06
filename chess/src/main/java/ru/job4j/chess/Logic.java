@@ -29,7 +29,7 @@ public final class Logic {
         for (int index = 0; index < figures.length; index++) {
             Figure figure = figures[index];
             for (int i = 0; i < steps.length; i++) {
-                if (figure != null && figure.position().equals(cell)) {
+                if (figure != null && figure.position().equals(cell)) { // ?
                     throw new OccupiedCellException(
                             String.format("The Cell is occupied")
                     );
