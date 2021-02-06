@@ -13,6 +13,16 @@ public class LogicTest {
             throws FigureNotFoundException, OccupiedCellException, ImpossibleMoveException {
         Logic logic = new Logic();
         logic.add(new BishopBlack(Cell.C1));
-        logic.move(Cell.C1, Cell.H6);  //?
+        logic.move(Cell.C1, Cell.H6);
+        throw new FigureNotFoundException(
+                String.format("The figure is not found")
+        );
+        throw new OccupiedCellException(
+                String.format("The Cell is occupied")
+        );
+        throw new ImpossibleMoveException(
+                String.format("The Cell is occupied")
+        );
     }
+
 }

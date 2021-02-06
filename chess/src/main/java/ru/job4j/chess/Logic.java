@@ -29,7 +29,7 @@ public final class Logic {
         for (int index = 0; index < figures.length; index++) {
             Figure figure = figures[index];
             for (int i = 0; i < steps.length; i++) {
-                if (figure != null && figure.position().equals(cell)) { // ?
+                if (figure != null && figure.position().equals(steps[i])) {
                     throw new OccupiedCellException(
                             String.format("The Cell is occupied")
                     );
@@ -51,6 +51,8 @@ public final class Logic {
                 return index;
             }
         }
-        throw new FigureNotFoundException();
+        throw new FigureNotFoundException(
+                String.format("The figure is not found")
+        );
     }
 }
