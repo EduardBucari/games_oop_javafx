@@ -12,12 +12,28 @@ public final class Logic {
         figures[index++] = figure;
     }
 
-    public void move(Cell source, Cell dest)
-            throws FigureNotFoundException, ImpossibleMoveException, OccupiedCellException {
+    public void move(Cell source, Cell dest) throws FigureNotFoundException {
         int index = findBy(source);
         Cell[] steps = figures[index].way(dest);
         free(steps);
         figures[index] = figures[index].copy(dest);
+        throw new FigureNotFoundException(String.format("The figure is not found."));
+    }
+
+    public void move(Cell source, Cell dest) throws ImpossibleMoveException {
+        int index = findBy(source);
+        Cell[] steps = figures[index].way(dest);
+        free(steps);
+        figures[index] = figures[index].copy(dest);
+        throw new ImpossibleMoveException(String.format("The move is impossible."));
+    }
+
+    public void move(Cell source, Cell dest) throws OccupiedCellException {
+        int index = findBy(source);
+        Cell[] steps = figures[index].way(dest);
+        free(steps);
+        figures[index] = figures[index].copy(dest);
+        throw new OccupiedCellException(String.format("The figure is not found."));
     }
 
 
