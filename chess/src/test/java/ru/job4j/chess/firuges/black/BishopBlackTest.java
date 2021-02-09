@@ -1,6 +1,7 @@
 package ru.job4j.chess.firuges.black;
 
 import org.junit.Test;
+import ru.job4j.chess.ImpossibleMoveException;
 import ru.job4j.chess.firuges.Cell;
 
 import static org.hamcrest.Matchers.is;
@@ -27,11 +28,10 @@ public class BishopBlackTest {
     // 3. Создать тест-метод для проверки метода way. Для этого создайте объект с начальным положением C1.
     // Вызовите метод way G5. На данном этапе метод еще не реализован и ваша задача реализовать
     // его таким образом, чтобы он вернул массив из четырех клеток: D2, E3, F4, G5.
-    public void testWay() {
+    public void testWay()
+           throws ImpossibleMoveException {
         BishopBlack bishopBlack = new BishopBlack(Cell.C1);
-        bishopBlack.way(Cell.G5) ;  // ?
-
-
+        bishopBlack.way(Cell.G5) ;
     }
 
     public void testIsDiagonal() {
